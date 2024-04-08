@@ -42,11 +42,18 @@
                         <a href="/Pagina/TendenciaReg.html" class="nav-link" href="#">Música</a>
                     </li>
 
+                    <a href="" class="nav-link" data-bs-toggle="modal" data-bs-target="#contactoModal">Contactanos</a>
+
                 </ul>
             </div>
+            
+            <form class="d-flex">
+                <input class="form-control me-2" type="text" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-primary" type="button">Search</button>
+            </form>
 
             <!-- Button to trigger modal -->
-            <button type="button" id="cerrarSesionBtn" class="btn btn-danger  " data-bs-toggle="modal"
+            <button type="button" id="cerrarSesionBtn" class="btn btn-danger mx-3" data-bs-toggle="modal"
                 data-bs-target="#myModal">Cerrar Sesión</button>
             <!-- Modal -->
             <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -78,6 +85,54 @@
             <h5>Tu fuente confiable de información diaria.</h5>
         </div>
     </section>
+    <!-- Modal de Contacto -->
+<div class="modal fade" id="contactoModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!-- Modal header -->
+            <div class="modal-header">
+                <h5 class="modal-title">Contacto</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <!-- Modal body -->
+            <div class="modal-body">
+                <form id="contactForm">
+                    <div class="mb-3 mt-3">
+                        <label for="nombre" class="form-label">Nombre:</label>
+                        <input type="text" class="form-control" id="txtNombreContacto"
+                            placeholder="Ingrese su nombre" name="txtNombreContacto">
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Correo:</label>
+                        <input type="email" class="form-control" id="txtEmailContacto"
+                            placeholder="Ingrese su correo" name="txtEmailContacto">
+                    </div>
+                    <div class="mb-3">
+                        <label for="mensaje" class="form-label">Mensaje:</label>
+                        <textarea class="form-control" id="txtMensajeContacto" rows="3"
+                            placeholder="Escriba su mensaje aquí" name="txtMensajeContacto"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Enviar</button>
+                </form>
+            </div>
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Script para mostrar mensaje de éxito -->
+<script>
+    document.getElementById("contactForm").addEventListener("submit", function(event) {
+        event.preventDefault(); // Evita que el formulario se envíe normalmente
+        alert("Mensaje enviado con éxito"); // Muestra el mensaje de éxito
+        document.getElementById("contactForm").reset(); // Reinicia el formulario
+        $('#contactoModal').modal('hide'); // Cierra el modal
+    });
+</script>
+
     <!--COMIENZO CAROUSEL-->
     <div class="container mt-2">
         <div id="demo" class="carousel slide" data-bs-ride="carousel">
